@@ -57,5 +57,9 @@ body {
 
 /* Отдельные блоки */
 @import "header";
+@import "section";
 @import "_intro";
 @import "_stat";
+@import "_wedo";
+
+/* ОТРАВНЯТЬ СЕТКУ ФЛЕКС В WEDO, ПОСМОТРЕТЬ ШПАРГАЛКУ ПО ФЛЕКС */

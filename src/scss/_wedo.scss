@@ -1,0 +1,73 @@
+.section {
+}
+
+.container {
+}
+.wedo {
+	color: $violet;
+	margin-right: rem(80);
+	// .wedo__top
+	&__top {
+		font-weight: bold;
+		font-size: rem(60);
+		line-height: rem(72);
+		width: 100%;
+
+		position: relative;
+		text-align: right;
+		padding-right: rem(65);
+		padding-top: rem(25);
+
+		margin-bottom: rem(71);
+	}
+	/* Оранжевый уголок */
+	&__top::after {
+		content: "";
+		display: block;
+		width: 46px;
+		height: 46px;
+		/* background-color: $orange; */
+
+		border-top: rem(12) solid $orange;
+		border-right: rem(12) solid $orange;
+		border-color: $orange;
+		position: absolute;
+		top: 0;
+		right: 0;
+		z-index: 10;
+	}
+	// .wedo__row
+	&__row {
+		display: flex;
+		flex-wrap: wrap;
+		gap: rem(100);
+	}
+	// .wedo__column
+	&__column {
+		width: 27%;
+	}
+	// .wedo__img
+	&__img {
+		text-align: center;
+		margin-bottom: rem(28);
+	}
+
+	// .wedo__content
+	&__content {
+	}
+	// .wedo__title
+	&__title {
+		font-weight: bold;
+		font-size: rem(18);
+		line-height: rem(20);
+
+		margin-bottom: rem(8);
+	}
+	// .wedo__subtitle
+	&__subtitle {
+		font-weight: normal;
+		font-size: rem(15);
+		line-height: rem(19);
+		color: $gray;
+	}
+}

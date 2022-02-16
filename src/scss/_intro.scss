@@ -3,8 +3,7 @@
 	/* height: 100vh; */
 	min-height: 810px;
 	position: relative;
-	background: url("@img/intro/bg.png") bottom no-repeat;
-	background-size: cover;
+	background: url("@img/intro/bg.png") bottom / cover no-repeat;
 
 	display: flex;
 	flex-direction: column;
