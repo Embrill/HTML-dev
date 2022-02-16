@@ -1,0 +1,56 @@
+.header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 1000;
+
+	padding-top: rem(32);
+	&__inner {
+		display: flex;
+
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	&__logo {
+	}
+}
+.container {
+}
+.nav {
+	&__list {
+		display: flex;
+		flex-wrap: wrap;
+		gap: rem(28);
+	}
+
+	&__links {
+	}
+
+	&__link {
+		color: rgb(255, 255, 255);
+		font-size: rem(15);
+
+		position: relative;
+	}
+
+	&__link::after {
+		content: "";
+		display: block;
+		width: 100%;
+		height: rem(3);
+		opacity: 0;
+		background-color: $orange;
+		position: absolute;
+		bottom: rem(-8);
+		left: 0;
+		z-index: 1;
+		transition: opacity 0.1s linear;
+	}
+	&__link:hover:after {
+		/* Появление полоски снизу под текстом в шапке */
+		/* display: block; */
+		opacity: 1; /* Прозрачность на 100% */
+	}
+}

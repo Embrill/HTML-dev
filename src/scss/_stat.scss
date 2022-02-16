@@ -1,0 +1,39 @@
+.section {
+}
+.container {
+}
+.stat {
+	color: $violet;
+	margin-top: rem(133);
+	margin-bottom: rem(131);
+	// .stat__row
+	&__row {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		margin: 0 rem(40);
+	}
+	// .stat__column
+	&__column {
+		width: 30.555555%;
+	}
+	// .stat__number
+	&__number {
+		font-weight: bold;
+		font-size: rem(60);
+		line-height: rem(68);
+		text-align: center;
+
+		margin-bottom: rem(14);
+	}
+	// .stat__text
+	&__text {
+		font-weight: bold;
+		font-size: rem(16);
+		line-height: rem(18);
+
+		text-align: center;
+		letter-spacing: -0.02em;
+		text-transform: uppercase;
+	}
+}

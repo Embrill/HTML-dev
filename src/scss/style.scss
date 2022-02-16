@@ -1,0 +1,61 @@
+@use "sass:math";
+/* Переменные / Всегда должны идти первыми */
+@import "vars";
+/* mixins */
+@import "base/mixins";
+/* Шрифты */
+@import "fonts";
+/* Иконочный шрифт */
+@import "fonts/icons";
+/* Обнуляющий стиль */
+@import "nullstyle";
+
+/* Оболочка */
+.wrapper {
+	min-height: 100%;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+}
+
+/* Ограничивающий контейнер */
+.container {
+	width: 100%;
+	max-width: 1182px;
+	margin: 0 auto;
+	padding: 0 rem(15);
+}
+
+/* Настраивание шрифта под rem / 1 rem = 16px */
+html {
+	font-size: 16px;
+}
+/* Шрифт по умолчанию */
+body {
+	font-family: proxima;
+	font-weight: 700;
+	font-size: rem(16);
+	color: #fff;
+}
+
+/* Кнопка */
+.btn {
+	display: inline-block;
+	color: #fff;
+	font-weight: bold;
+	font-size: rem(14);
+	line-height: rem(45);
+	padding: rem(4) rem(41.5);
+	background-color: $orange;
+	border-radius: rem(4);
+
+	transition: background-color 0.2s linear;
+	&:hover {
+		background-color: $orangeHover;
+	}
+}
+
+/* Отдельные блоки */
+@import "header";
+@import "_intro";
+@import "_stat";
