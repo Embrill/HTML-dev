@@ -286,15 +286,24 @@ body {
   /* Прозрачность на 100% */
 }
 
+.section--stat {
+  padding-top: 8.3125rem;
+  padding-bottom: 8.1875rem;
+}
+
+.section--wedo {
+  padding: 7.5rem 0;
+  background-color: #f8f8f8;
+}
+
 .no-webp .intro{
-  background: url("../img/intro/bg.png") bottom no-repeat; }
+  background: url("../img/intro/bg.png") bottom/cover no-repeat; }
 
 .intro {
   width: 100%;
   /* height: 100vh; */
   min-height: 810px;
   position: relative;
-  background-size: cover;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -389,8 +398,6 @@ body {
 
 .stat {
   color: #7050e5;
-  margin-top: 8.3125rem;
-  margin-bottom: 8.1875rem;
 }
 
 .stat__row {
@@ -426,4 +433,71 @@ body {
   text-transform: uppercase;
 }
 
-.webp .intro{ background: url(../img/intro/bg.webp) bottom no-repeat; }
+.wedo {
+  color: #7050e5;
+  margin-right: 5rem;
+  /* Оранжевый уголок */
+}
+
+.wedo__top {
+  font-weight: bold;
+  font-size: 3.75rem;
+  line-height: 4.5rem;
+  width: 100%;
+  position: relative;
+  text-align: right;
+  padding-right: 4.0625rem;
+  padding-top: 1.5625rem;
+  margin-bottom: 4.4375rem;
+}
+
+.wedo__top::after {
+  content: "";
+  display: block;
+  width: 46px;
+  height: 46px;
+  /* background-color: $orange; */
+  border-top: 0.75rem solid #ff8b00;
+  border-right: 0.75rem solid #ff8b00;
+  border-color: #ff8b00;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 10;
+}
+
+.wedo__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 6.25rem;
+}
+
+.wedo__column {
+  width: 27%;
+}
+
+.wedo__img {
+  text-align: center;
+  margin-bottom: 1.75rem;
+}
+
+.wedo__title {
+  font-weight: bold;
+  font-size: 1.125rem;
+  line-height: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.wedo__subtitle {
+  font-weight: normal;
+  font-size: 0.9375rem;
+  line-height: 1.1875rem;
+  color: #878787;
+}
+
+/* ОТРАВНЯТЬ СЕТКУ ФЛЕКС В WEDO, ПОСМОТРЕТЬ ШПАРГАЛКУ ПО ФЛЕКС */
+
+.webp .intro{ background: url(../img/intro/bg.webp) bottom/cover no-repeat; }
