@@ -232,14 +232,33 @@ body {
   justify-content: space-between;
   align-items: center;
 }
+.header__logo img {
+  width: 78px;
+  height: 100px;
+}
+
+.nav {
+  max-width: 573px;
+  max-height: 78px;
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
 .nav__list {
+  position: absolute;
+  top: -2px;
+  right: -1px;
+  z-index: 10;
   display: flex;
   flex-wrap: wrap;
-  gap: 1.75rem;
+}
+.nav__links:not(:last-child) {
+  margin-right: 29px;
 }
 .nav__link {
   color: white;
   font-size: 0.9375rem;
+  line-height: 1.2;
   position: relative;
 }
 .nav__link::after {
@@ -314,6 +333,18 @@ body {
 .intro__button {
   margin-top: 2.75rem;
 }
+.intro__social {
+  max-width: 200px;
+  max-height: 200px;
+  position: relative;
+}
+.intro__social img {
+  position: absolute;
+  top: -56px;
+  left: 0;
+  z-index: 10;
+}
+
 .intro__down {
   position: absolute;
   bottom: 0;
@@ -337,7 +368,7 @@ body {
 }
 
 .btn__down {
-  font-size: 4.375rem;
+  font-size: 4.4375rem;
   color: #ff8b00;
   transition: color 0.2s linear;
 }
@@ -350,17 +381,28 @@ body {
 }
 .stat__row {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: 0 2.5rem;
 }
 .stat__column {
-  width: 30.555555%;
+  margin-right: 92px;
+  padding-top: 1px;
+}
+.stat__column:last-child {
+  margin-right: 0;
+}
+.stat__column--column-1 {
+  max-width: 255px;
+  margin-left: 122px;
+}
+.stat__column--column-2 {
+  max-width: 213px;
+}
+.stat__column--column-3 {
+  max-width: 247px;
 }
 .stat__number {
   font-weight: bold;
   font-size: 3.75rem;
-  line-height: 4.25rem;
+  line-height: 1.1333333333;
   text-align: center;
   margin-bottom: 0.875rem;
 }
@@ -392,7 +434,7 @@ body {
   width: 100%;
   position: relative;
   text-align: right;
-  padding-right: 3.75rem;
+  padding-right: 3.625rem;
   padding-top: 1.5625rem;
   margin-bottom: 4.4375rem;
 }
@@ -406,8 +448,8 @@ body {
   border-right: 0.75rem solid #ff8b00;
   border-color: #ff8b00;
   position: absolute;
-  top: 0;
-  right: 0;
+  top: -1px;
+  right: -7px;
   z-index: 10;
 }
 .wedo__row {
