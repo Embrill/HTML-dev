@@ -1,13 +1,8 @@
 @charset "UTF-8";
-
 /* Переменные / Всегда должны идти первыми */
-
 /* mixins */
-
 /* Шрифты */
-
 @import url(https://fonts.googleapis.com/css?family=Raleway:500,600,800);
-
 @font-face {
   font-family: icons;
   font-display: swap;
@@ -15,7 +10,6 @@
   font-weight: 400;
   font-style: normal;
 }
-
 @font-face {
   font-family: proxima;
   font-display: swap;
@@ -23,7 +17,6 @@
   font-weight: 700;
   font-style: normal;
 }
-
 @font-face {
   font-family: proxima;
   font-display: swap;
@@ -31,7 +24,6 @@
   font-weight: 400;
   font-style: normal;
 }
-
 @font-face {
   font-family: proxima;
   font-display: swap;
@@ -39,9 +31,7 @@
   font-weight: 600;
   font-style: normal;
 }
-
 /* Иконочный шрифт */
-
 [class*=_icon-]:before {
   font-family: "icons";
   font-style: normal;
@@ -78,7 +68,6 @@
 }
 
 /* Обнуляющий стиль */
-
 * {
   padding: 0;
   margin: 0;
@@ -88,6 +77,7 @@
 *,
 *:before,
 *:after {
+  -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
@@ -168,21 +158,14 @@ h6 {
 }
 
 /* Оболочка */
-
 .wrapper {
   min-height: 100%;
   overflow: hidden;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
 }
 
 /* Ограничивающий контейнер */
-
 .container {
   width: 100%;
   max-width: 1182px;
@@ -191,13 +174,11 @@ h6 {
 }
 
 /* Настраивание шрифта под rem / 1 rem = 16px */
-
 html {
   font-size: 16px;
 }
 
 /* Шрифт по умолчанию */
-
 body {
   font-family: proxima;
   font-weight: 700;
@@ -206,7 +187,6 @@ body {
 }
 
 /* Кнопка */
-
 .btn {
   display: inline-block;
   color: #fff;
@@ -216,17 +196,29 @@ body {
   padding: 0.25rem 2.59375rem;
   background-color: #ff8b00;
   border-radius: 0.25rem;
-  -webkit-transition: background-color 0.2s linear;
-  -o-transition: background-color 0.2s linear;
   transition: background-color 0.2s linear;
 }
-
 .btn:hover {
   background-color: #c76d00;
 }
 
-/* Отдельные блоки */
+.btn-small {
+  display: inline-block;
+  color: #fff;
+  font-weight: bold;
+  font-size: 0.875rem;
+  line-height: 1.125rem;
+  padding: 0.8125rem 2.9375rem;
+  background-color: #ff8b00;
+  border-radius: 0.25rem;
+  text-transform: uppercase;
+  transition: background-color 0.2s linear;
+}
+.btn-small:hover {
+  background-color: #c76d00;
+}
 
+/* Отдельные блоки */
 .header {
   position: absolute;
   top: 0;
@@ -235,34 +227,21 @@ body {
   z-index: 1000;
   padding-top: 2rem;
 }
-
 .header__inner {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: space-between;
+  align-items: center;
 }
-
 .nav__list {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   gap: 1.75rem;
 }
-
 .nav__link {
   color: white;
   font-size: 0.9375rem;
   position: relative;
 }
-
 .nav__link::after {
   content: "";
   display: block;
@@ -274,11 +253,8 @@ body {
   bottom: -0.5rem;
   left: 0;
   z-index: 1;
-  -webkit-transition: opacity 0.1s linear;
-  -o-transition: opacity 0.1s linear;
   transition: opacity 0.1s linear;
 }
-
 .nav__link:hover:after {
   /* Появление полоски снизу под текстом в шапке */
   /* display: block; */
@@ -296,80 +272,56 @@ body {
   background-color: #f8f8f8;
 }
 
-.no-webp .intro{
-  background: url("../img/intro/bg.png") bottom/cover no-repeat; }
+.section--product {
+  padding: 7.125rem 0 6.0625rem 0;
+}
 
 .intro {
   width: 100%;
   /* height: 100vh; */
   min-height: 810px;
   position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  background: url("../img/intro/bg.png") bottom/cover no-repeat;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  align-items: center;
   /* justify-content: center; */
 }
-
 .intro__inner {
   width: 100%;
   max-width: 970px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   margin-left: 5.125rem;
   gap: 13.75rem;
   margin-top: 16.3125rem;
 }
-
 .intro__content {
   width: 100%;
   max-width: 552px;
 }
-
 .intro__title {
   font-weight: bold;
   font-size: 3.4375rem;
   margin-bottom: 0.75rem;
 }
-
 .intro__text {
   font-weight: 600;
   font-size: 1rem;
   line-height: 1.875rem;
   padding-right: 3.125rem;
 }
-
 .intro__button {
   margin-top: 2.75rem;
 }
-
 .intro__down {
   position: absolute;
   bottom: 0;
   left: 50%;
-  -webkit-transform: translate(-50%, 0);
-      -ms-transform: translate(-50%, 0);
-          transform: translate(-50%, 0);
-  display: -webkit-box;
-  display: -ms-flexbox;
+  transform: translate(-50%, 0);
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  align-items: center;
   margin-bottom: 3.125rem;
   /* transition: background-color 0.2s linear;
   &:hover {
@@ -387,11 +339,8 @@ body {
 .btn__down {
   font-size: 4.375rem;
   color: #ff8b00;
-  -webkit-transition: color 0.2s linear;
-  -o-transition: color 0.2s linear;
   transition: color 0.2s linear;
 }
-
 .btn__down:hover {
   color: #c76d00;
 }
@@ -399,23 +348,15 @@ body {
 .stat {
   color: #7050e5;
 }
-
 .stat__row {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  flex-wrap: wrap;
+  justify-content: center;
   margin: 0 2.5rem;
 }
-
 .stat__column {
   width: 30.555555%;
 }
-
 .stat__number {
   font-weight: bold;
   font-size: 3.75rem;
@@ -423,7 +364,6 @@ body {
   text-align: center;
   margin-bottom: 0.875rem;
 }
-
 .stat__text {
   font-weight: bold;
   font-size: 1rem;
@@ -433,12 +373,18 @@ body {
   text-transform: uppercase;
 }
 
-.wedo {
-  color: #7050e5;
-  margin-right: 5rem;
-  /* Оранжевый уголок */
+.container--wedo {
+  width: 100%;
+  max-width: 1022px;
+  margin: 0 auto;
+  padding: 0 0.9375rem;
 }
 
+.wedo {
+  color: #7050e5;
+  /* 	margin: 0 rem(80); */
+  /* Оранжевый уголок */
+}
 .wedo__top {
   font-weight: bold;
   font-size: 3.75rem;
@@ -446,11 +392,10 @@ body {
   width: 100%;
   position: relative;
   text-align: right;
-  padding-right: 4.0625rem;
+  padding-right: 3.75rem;
   padding-top: 1.5625rem;
   margin-bottom: 4.4375rem;
 }
-
 .wedo__top::after {
   content: "";
   display: block;
@@ -465,32 +410,109 @@ body {
   right: 0;
   z-index: 10;
 }
-
 .wedo__row {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  gap: 6.25rem;
+  flex-wrap: wrap;
+  /* gap: rem(100); */
+  row-gap: 2.8125rem;
+  column-gap: 6rem;
 }
-
 .wedo__column {
-  width: 27%;
+  /* 	width: 26%; */
 }
-
+.wedo .wedo__column--1 {
+  flex: 0 1 271px;
+}
+.wedo .wedo__column--2 {
+  flex: 0 1 245px;
+}
+.wedo .wedo__column--3 {
+  flex: 0 1 283px;
+}
+.wedo .wedo__column--4 {
+  flex: 0 1 271px;
+}
+.wedo .wedo__column--5 {
+  flex: 0 1 245px;
+}
+.wedo .wedo__column--6 {
+  flex: 0 1 270px;
+}
 .wedo__img {
-  text-align: center;
+  position: relative;
+  width: 13.125rem;
+  height: 9.375rem;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+}
+.wedo__img--1 {
+  margin-bottom: 1.5625rem;
+}
+.wedo__img--1 img {
+  position: absolute;
+  top: 50%;
+  left: 52%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+.wedo__img--2 {
   margin-bottom: 1.75rem;
 }
-
+.wedo__img--2 img {
+  position: absolute;
+  top: 50%;
+  left: 58%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+.wedo__img--3 {
+  margin-bottom: 1.5rem;
+}
+.wedo__img--3 img {
+  position: absolute;
+  top: 47%;
+  left: 64%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+.wedo__img--4 {
+  margin-bottom: 1.3125rem;
+}
+.wedo__img--4 img {
+  position: absolute;
+  top: 50%;
+  left: 60%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+.wedo__img--5 {
+  margin-bottom: 1.3125rem;
+}
+.wedo__img--5 img {
+  position: absolute;
+  top: 53%;
+  left: 65%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+.wedo__img--6 {
+  margin-bottom: 1.3125rem;
+}
+.wedo__img--6 img {
+  position: absolute;
+  top: 60%;
+  left: 65%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
 .wedo__title {
   font-weight: bold;
   font-size: 1.125rem;
   line-height: 1.25rem;
+  text-transform: uppercase;
   margin-bottom: 0.5rem;
 }
-
 .wedo__subtitle {
   font-weight: normal;
   font-size: 0.9375rem;
@@ -498,6 +520,49 @@ body {
   color: #878787;
 }
 
-/* ОТРАВНЯТЬ СЕТКУ ФЛЕКС В WEDO, ПОСМОТРЕТЬ ШПАРГАЛКУ ПО ФЛЕКС */
+.container--product {
+  width: 100%;
+  max-width: 1353px;
+  margin: 0 auto;
+  padding: 0 0.9375rem;
+}
 
-.webp .intro{ background: url(../img/intro/bg.webp) bottom/cover no-repeat; }
+.product {
+  display: flex;
+  justify-content: space-between;
+}
+.product__content {
+  padding-top: 5.625rem;
+  width: 100%;
+  max-width: 28.4375rem;
+  margin-left: 1.375rem;
+}
+.product__title {
+  font-weight: bold;
+  font-size: 2.5rem;
+  line-height: 3.4375rem;
+  color: #7050e5;
+  margin-bottom: 0.4375rem;
+}
+.product__text {
+  font-weight: normal;
+  font-size: 0.9375rem;
+  line-height: 1.3125rem;
+  letter-spacing: -0.02rem;
+  color: #878787;
+  margin-bottom: 1.8125rem;
+}
+.product__video {
+  width: 45.25rem;
+  height: 27.75rem;
+  padding: 0 45.25rem 0 0;
+  position: relative;
+}
+.product__video iframe {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: -0.4375rem;
+  left: 0;
+  object-fit: cover;
+}

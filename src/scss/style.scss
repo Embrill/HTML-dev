@@ -55,11 +55,27 @@ body {
 	}
 }
 
+.btn-small {
+	display: inline-block;
+	color: #fff;
+	font-weight: bold;
+	font-size: rem(14);
+	line-height: rem(18);
+	padding: rem(13) rem(47);
+	background-color: $orange;
+	border-radius: rem(4);
+	text-transform: uppercase;
+
+	transition: background-color 0.2s linear;
+	&:hover {
+		background-color: $orangeHover;
+	}
+}
+
 /* Отдельные блоки */
 @import "header";
 @import "section";
 @import "_intro";
 @import "_stat";
 @import "_wedo";
-
-/* ОТРАВНЯТЬ СЕТКУ ФЛЕКС В WEDO, ПОСМОТРЕТЬ ШПАРГАЛКУ ПО ФЛЕКС */
+@import "_product";

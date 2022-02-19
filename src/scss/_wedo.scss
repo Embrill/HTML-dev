@@ -3,9 +3,16 @@
 
 .container {
 }
+.container--wedo {
+	width: 100%;
+	max-width: 1022px;
+	margin: 0 auto;
+	padding: 0 rem(15);
+}
+
 .wedo {
 	color: $violet;
-	margin-right: rem(80);
+	/* 	margin: 0 rem(80); */
 	// .wedo__top
 	&__top {
 		font-weight: bold;
@@ -15,7 +22,7 @@
 
 		position: relative;
 		text-align: right;
-		padding-right: rem(65);
+		padding-right: rem(60);
 		padding-top: rem(25);
 
 		margin-bottom: rem(71);
@@ -40,16 +47,106 @@
 	&__row {
 		display: flex;
 		flex-wrap: wrap;
-		gap: rem(100);
+		/* gap: rem(100); */
+		row-gap: rem(45);
+		column-gap: rem(96);
 	}
 	// .wedo__column
 	&__column {
-		width: 27%;
+		/* 	width: 26%; */
 	}
+
+	.wedo__column--1 {
+		flex: 0 1 271px;
+	}
+	.wedo__column--2 {
+		flex: 0 1 245px;
+	}
+	.wedo__column--3 {
+		flex: 0 1 283px;
+	}
+	.wedo__column--4 {
+		flex: 0 1 271px;
+	}
+	.wedo__column--5 {
+		flex: 0 1 245px;
+	}
+	.wedo__column--6 {
+		flex: 0 1 270px;
+	}
+
 	// .wedo__img
 	&__img {
-		text-align: center;
+		position: relative;
+		width: rem(210);
+		height: rem(150);
+
+		/* display: flex;
+		justify-content: center;
+		align-items: center; */
+	}
+	&__img img {
+	}
+
+	&__img--1 {
+		margin-bottom: rem(25);
+	}
+	&__img--1 img {
+		position: absolute;
+		top: 50%;
+		left: 52%;
+		transform: translate(-50%, -50%);
+		z-index: 10;
+	}
+	&__img--2 {
 		margin-bottom: rem(28);
+	}
+	&__img--2 img {
+		position: absolute;
+		top: 50%;
+		left: 58%;
+		transform: translate(-50%, -50%);
+		z-index: 10;
+	}
+	&__img--3 {
+		margin-bottom: rem(24);
+	}
+	&__img--3 img {
+		position: absolute;
+		top: 47%;
+		left: 64%;
+		transform: translate(-50%, -50%);
+		z-index: 10;
+	}
+	&__img--4 {
+		margin-bottom: rem(21);
+	}
+	&__img--4 img {
+		position: absolute;
+		top: 50%;
+		left: 60%;
+		transform: translate(-50%, -50%);
+		z-index: 10;
+	}
+	&__img--5 {
+		margin-bottom: rem(21);
+	}
+	&__img--5 img {
+		position: absolute;
+		top: 53%;
+		left: 65%;
+		transform: translate(-50%, -50%);
+		z-index: 10;
+	}
+	&__img--6 {
+		margin-bottom: rem(21);
+	}
+	&__img--6 img {
+		position: absolute;
+		top: 60%;
+		left: 65%;
+		transform: translate(-50%, -50%);
+		z-index: 10;
 	}
 
 	// .wedo__content
@@ -60,6 +157,7 @@
 		font-weight: bold;
 		font-size: rem(18);
 		line-height: rem(20);
+		text-transform: uppercase;
 
 		margin-bottom: rem(8);
 	}
