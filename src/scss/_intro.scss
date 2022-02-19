@@ -46,6 +46,15 @@
 	}
 
 	&__social {
+		max-width: 200px;
+		max-height: 200px;
+		position: relative;
+	}
+	&__social img {
+		position: absolute;
+		top: -56px;
+		left: 0;
+		z-index: 10;
 	}
 }
 
@@ -74,7 +83,7 @@
 	line-height: rem(20);
 }
 .btn__down {
-	font-size: rem(70);
+	font-size: rem(71);
 	color: $orange;
 
 	transition: color 0.2s linear;

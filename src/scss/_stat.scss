@@ -7,19 +7,30 @@
 	// .stat__row
 	&__row {
 		display: flex;
-		flex-wrap: wrap;
-		justify-content: center;
-		margin: 0 rem(40);
 	}
 	// .stat__column
 	&__column {
-		width: 30.555555%;
+		margin-right: 92px;
+		padding-top: 1px;
+	}
+	&__column:last-child {
+		margin-right: 0;
+	}
+	&__column--column-1 {
+		max-width: 255px;
+		margin-left: 122px;
+	}
+	&__column--column-2 {
+		max-width: 213px;
+	}
+	&__column--column-3 {
+		max-width: 247px;
 	}
 	// .stat__number
 	&__number {
 		font-weight: bold;
 		font-size: rem(60);
-		line-height: rem(68);
+		line-height: math.div(68, 60);
 		text-align: center;
 
 		margin-bottom: rem(14);

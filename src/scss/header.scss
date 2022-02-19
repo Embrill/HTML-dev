@@ -14,24 +14,39 @@
 	}
 
 	&__logo {
+		& img {
+			width: 78px;
+			height: 100px;
+		}
 	}
 }
 .container {
 }
 .nav {
+	max-width: 573px;
+	max-height: 78px;
+	height: 100%;
+	width: 100%;
+
+	position: relative;
 	&__list {
+		position: absolute;
+		top: -2px;
+		right: -1px;
+		z-index: 10;
+
 		display: flex;
 		flex-wrap: wrap;
-		gap: rem(28);
 	}
 
-	&__links {
+	&__links:not(:last-child) {
+		margin-right: 29px;
 	}
 
 	&__link {
 		color: rgb(255, 255, 255);
 		font-size: rem(15);
-
+		line-height: math.div(18, 15);
 		position: relative;
 	}
 
