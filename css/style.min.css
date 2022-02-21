@@ -218,6 +218,22 @@ body {
   background-color: #c76d00;
 }
 
+.btn-contact {
+  display: inline-block;
+  color: #fff;
+  font-weight: bold;
+  font-size: 0.875rem;
+  line-height: 1.2857142857;
+  padding: 1.09375rem 5.125rem;
+  background-color: #ff8b00;
+  border-radius: 0.25rem;
+  text-transform: uppercase;
+  transition: background-color 0.2s linear;
+}
+.btn-contact:hover {
+  background-color: #c76d00;
+}
+
 /* Отдельные блоки */
 .header {
   position: absolute;
@@ -264,13 +280,13 @@ body {
 .nav__link::after {
   content: "";
   display: block;
-  width: 100%;
+  width: 110%;
   height: 0.1875rem;
   opacity: 0;
   background-color: #ff8b00;
   position: absolute;
   bottom: -0.5rem;
-  left: 0;
+  left: -5%;
   z-index: 1;
   transition: opacity 0.1s linear;
 }
@@ -293,6 +309,10 @@ body {
 
 .section--product {
   padding: 7.125rem 0 6.0625rem 0;
+}
+
+.section--contact {
+  background: url("../img/contact/bg-contact.png") center/cover no-repeat;
 }
 
 .intro {
@@ -574,7 +594,7 @@ body {
   justify-content: space-between;
 }
 .product__content {
-  padding-top: 5.625rem;
+  padding-top: 5.875rem;
   width: 100%;
   max-width: 28.4375rem;
   margin-left: 1.375rem;
@@ -607,4 +627,113 @@ body {
   top: -0.4375rem;
   left: 0;
   object-fit: cover;
+}
+
+.container--contact {
+  width: 100%;
+  max-width: 1353px;
+  margin: 0 auto;
+  padding: 0 0.9375rem;
+  min-height: 707px;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 62px;
+  padding-right: 30px;
+  margin-top: 126px;
+}
+.contact__title {
+  font-weight: bold;
+  font-size: 3.4375rem;
+  line-height: 1;
+  display: inline-block;
+  max-width: 361px;
+}
+.form__title {
+  font-weight: bold;
+  font-size: 28px;
+  letter-spacing: -0.02666rem;
+  margin-bottom: 37px;
+}
+
+.form-name {
+  display: flex;
+  column-gap: 1.25rem;
+  margin-bottom: 33px;
+}
+.form-name__item {
+  display: flex;
+  flex-direction: column;
+  width: 310px;
+}
+.form-name__item input {
+  height: 2.5rem;
+  border-radius: 8px;
+  padding-left: 0.8125rem;
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 0.875rem;
+  line-height: 0.5;
+}
+.form-name__title {
+  font-weight: 600;
+  font-size: 13px;
+  padding-left: 4px;
+  margin-bottom: 10px;
+}
+
+.form-email {
+  margin-bottom: 30px;
+}
+.form-email__item {
+  display: flex;
+  flex-direction: column;
+  width: 640px;
+}
+.form-email__item input {
+  height: 2.5rem;
+  border-radius: 8px;
+  padding-left: 0.8125rem;
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 0.875rem;
+  line-height: 0.5;
+}
+.form-email__title {
+  font-weight: 600;
+  font-size: 13px;
+  padding-left: 4px;
+  margin-bottom: 10px;
+}
+
+.review {
+  display: block;
+  max-width: 640px;
+  width: 100%;
+  max-height: 96px;
+  height: 100%;
+  border-radius: 8px;
+  padding: 0.9375rem;
+  resize: none;
+  /* запрещает изменять размер */
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 0.875rem;
+  line-height: 0.5;
+  margin-bottom: 2rem;
+}
+
+.form-review__title {
+  display: block;
+  font-weight: 600;
+  font-size: 13px;
+  padding-left: 4px;
+  margin-bottom: 10px;
 }
