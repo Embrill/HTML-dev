@@ -53,13 +53,13 @@
 	&__link::after {
 		content: "";
 		display: block;
-		width: 100%;
-		height: rem(3);
+		width: 110%;
+		height: 0.1875rem;
 		opacity: 0;
-		background-color: $orange;
+		background-color: #ff8b00;
 		position: absolute;
-		bottom: rem(-8);
-		left: 0;
+		bottom: -0.5rem;
+		left: -5%;
 		z-index: 1;
 		transition: opacity 0.1s linear;
 	}

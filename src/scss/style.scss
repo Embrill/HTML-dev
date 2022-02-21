@@ -72,6 +72,23 @@ body {
 	}
 }
 
+.btn-contact {
+	display: inline-block;
+	color: #fff;
+	font-weight: bold;
+	font-size: rem(14);
+	line-height: math.div(18, 14);
+	padding: rem(17.5) rem(82);
+	background-color: $orange;
+	border-radius: rem(4);
+	text-transform: uppercase;
+
+	transition: background-color 0.2s linear;
+	&:hover {
+		background-color: $orangeHover;
+	}
+}
+
 /* Отдельные блоки */
 @import "header";
 @import "section";
@@ -79,3 +96,4 @@ body {
 @import "_stat";
 @import "_wedo";
 @import "_product";
+@import "_contact";
