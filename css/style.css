@@ -752,8 +752,8 @@ body {
 }
 .footer__logo {
   position: absolute;
-  bottom: 54px;
-  right: 42px;
+  bottom: 13%;
+  right: 9.5%;
   z-index: 10;
 }
 .footer .footer__bottom {
