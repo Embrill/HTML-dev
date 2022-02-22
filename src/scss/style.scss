@@ -1,13 +1,8 @@
-@use "sass:math";
-/* Переменные / Всегда должны идти первыми */
-@import "vars";
-/* mixins */
-@import "base/mixins";
-/* Шрифты */
-@import "fonts";
-/* Иконочный шрифт */
-@import "fonts/icons";
-/* Обнуляющий стиль */
+@use "sass:math"; /* Переменные / Всегда должны идти первыми */
+@import "vars"; /* mixins */
+@import "base/mixins"; /* Шрифты */
+@import "fonts"; /* Иконочный шрифт */
+@import "fonts/icons"; /* Обнуляющий стиль */
 @import "nullstyle";
 
 /* Оболочка */
@@ -97,3 +92,5 @@ body {
 @import "_wedo";
 @import "_product";
 @import "_contact";
+@import "_white";
+@import "footer";
