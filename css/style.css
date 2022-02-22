@@ -736,3 +736,155 @@ body {
   padding-left: 4px;
   margin-bottom: 10px;
 }
+
+.white {
+  min-height: 97px;
+  height: 100%;
+}
+
+.footer {
+  background: #363636;
+  padding-top: 3.5rem;
+  position: relative;
+}
+.footer__inner {
+  display: flex;
+}
+.footer__logo {
+  position: absolute;
+  bottom: 54px;
+  right: 42px;
+  z-index: 10;
+}
+.footer .footer__bottom {
+  background-color: #252525;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 20px;
+  text-transform: uppercase;
+  margin-top: 3.125rem;
+}
+.footer .footer__bottom span {
+  color: #ff8b00;
+  padding: 0 4px;
+}
+
+.twitter {
+  max-width: 18.75rem;
+  width: 100%;
+}
+.top-twitter {
+  display: flex;
+  align-items: center;
+  background-color: #7050e5;
+  max-height: 3.75rem;
+  height: 100%;
+}
+.top-twitter__logo {
+  background-color: #5634d1;
+  width: 3.75rem;
+  height: 3.75rem;
+  padding: 0.625rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5rem;
+}
+.top-twitter__body {
+  padding: 10px 16px;
+}
+.top-twitter__title {
+  font-weight: 600;
+  font-size: 1.375rem;
+  line-height: 0.8181818182;
+  letter-spacing: 0.008em;
+}
+.top-twitter__text {
+  font-weight: normal;
+  font-size: 0.875rem;
+  line-height: 1.2857142857;
+  letter-spacing: -0.008em;
+}
+
+.body-twitter {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  padding: 1.25rem 3rem 1.25rem 1.875rem;
+}
+.body-twitter__item:not(:last-child) {
+  margin-bottom: 1rem;
+}
+.body-twitter__title {
+  font-weight: normal;
+  font-size: 0.8125rem;
+  line-height: 1.3846153846;
+  letter-spacing: -0.02em;
+  color: #999999;
+}
+.body-twitter__link {
+  font-weight: normal;
+  font-size: 0.8125rem;
+  line-height: 1.3846153846;
+}
+.body-twitter__link a {
+  color: #7050e5;
+}
+.body-twitter__date {
+  font-weight: normal;
+  font-size: 0.6875rem;
+  line-height: 1.6363636364;
+  letter-spacing: -0.01em;
+  color: #555;
+}
+
+.footer__nav-container {
+  max-width: 735px;
+  width: 100%;
+  margin-left: 7.5rem;
+  display: flex;
+  column-gap: 8.25rem;
+}
+
+.nav-footer {
+  /* &:last-child {
+  	width: 100%;
+  } */
+}
+.nav-footer__title {
+  display: flex;
+  align-items: center;
+  column-gap: 0.5rem;
+  color: #ff8b00;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 20px;
+  text-transform: uppercase;
+}
+.nav-footer__links {
+  margin-top: 1.25rem;
+}
+.nav-footer__link {
+  display: flex;
+  flex-direction: column;
+  column-gap: 0.5rem;
+  font-weight: 600;
+  font-size: 0.875rem;
+  line-height: 1.4285714286;
+  text-transform: uppercase;
+}
+.nav-footer__link {
+  color: #fff;
+}
+.nav-footer__link:not(:last-child) {
+  margin-bottom: 0.5rem;
+}
+.nav-footer .nav-footer__link--lowercase {
+  text-transform: none;
+}
