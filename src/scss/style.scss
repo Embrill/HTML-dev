@@ -16,7 +16,7 @@
 /* Ограничивающий контейнер */
 .container {
 	width: 100%;
-	max-width: 1182px;
+	max-width: 1182px; // Вместе с padding
 	margin: 0 auto;
 	padding: 0 rem(15);
 }

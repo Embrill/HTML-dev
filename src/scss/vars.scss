@@ -8,3 +8,10 @@ $grayFooterDate: #555;
 $grayFooterTwitterTitle: #999999;
 $sectionWedoBG: #f8f8f8;
 $footerBottom: #252525;
+
+// Брейк-поинты
+$containerWidth: 1182px;
+$pc: $containerWidth; // ПК, ноутбуки, некоторые планшеты в горизонтальном положении
+$tablet: 991.98px; // Планшеты, некоторые телефоны в горизонтальном положении
+$mobile: 767.98px; // Телефоны L
+$mobileSmall: 479.98px; // Телефоны S

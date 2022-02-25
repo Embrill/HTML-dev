@@ -26,6 +26,16 @@
 		padding-top: rem(25);
 
 		margin-bottom: rem(71);
+
+		@media (max-width: $pc) {
+			font-size: rem(55);
+		}
+		@media (max-width: $mobile) {
+			font-size: rem(45);
+		}
+		@media (max-width: $mobileSmall) {
+			font-size: rem(34);
+		}
 	}
 	/* Оранжевый уголок */
 	&__top::after {
@@ -50,6 +60,10 @@
 		/* gap: rem(100); */
 		row-gap: rem(45);
 		column-gap: rem(96);
+
+		@media (max-width: $pc) {
+			justify-content: center;
+		}
 	}
 	// .wedo__column
 	&__column {

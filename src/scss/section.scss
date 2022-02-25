@@ -1,12 +1,31 @@
 .section {
 }
 .section--stat {
-	padding-top: rem(133);
-	padding-bottom: rem(131);
+	padding: rem(133) 0;
+
+	@media (max-width: $pc) {
+		padding: rem(115) 0;
+	}
+	@media (max-width: $mobile) {
+		padding: rem(100) 0;
+	}
+	@media (max-width: $mobileSmall) {
+		padding: rem(80) 0;
+	}
 }
 .section--wedo {
 	padding: rem(120) 0;
 	background-color: $sectionWedoBG;
+
+	@media (max-width: $pc) {
+		padding: rem(100) 0;
+	}
+	@media (max-width: $mobile) {
+		padding: rem(80) 0;
+	}
+	@media (max-width: $mobileSmall) {
+		padding: rem(62) 0;
+	}
 }
 
 .section--product {
