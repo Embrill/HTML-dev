@@ -355,6 +355,16 @@ body {
 .section--product {
   padding: 7.125rem 0 6.0625rem 0;
 }
+@media (max-width: 767.98px) {
+  .section--product {
+    padding-top: 2.5rem;
+  }
+}
+@media (max-width: 479.98px) {
+  .section--product {
+    padding-top: 0rem;
+  }
+}
 
 .section--contact {
   background: url("../img/contact/bg-contact.png") center/cover no-repeat;
@@ -396,7 +406,7 @@ body {
 @media (max-width: 479.98px) {
   .intro__inner {
     gap: 6.25rem;
-    margin-top: 12.5rem;
+    margin-top: 9.375rem;
   }
 }
 .intro__content {
@@ -478,6 +488,11 @@ body {
   &:hover {
   	background-color: $orangeHover;
   } */
+}
+@media (max-width: 479.98px) {
+  .intro__down {
+    bottom: 3.75rem;
+  }
 }
 
 .intro__find {
@@ -750,13 +765,29 @@ body {
 
 .product {
   display: flex;
-  justify-content: space-between;
+  gap: 125px;
+}
+@media (max-width: 1182px) {
+  .product {
+    gap: 10px;
+  }
+}
+@media (max-width: 767.98px) {
+  .product {
+    flex-direction: column;
+  }
 }
 .product__content {
-  padding-top: 5.875rem;
+  padding-top: 5.7rem;
+  padding-right: 0.9375rem;
   width: 100%;
   max-width: 28.4375rem;
   margin-left: 1.375rem;
+}
+@media (max-width: 767.98px) {
+  .product__content {
+    margin-left: 0rem;
+  }
 }
 .product__title {
   font-weight: bold;
@@ -764,6 +795,12 @@ body {
   line-height: 3.4375rem;
   color: #7050e5;
   margin-bottom: 0.4375rem;
+}
+@media (max-width: 767.98px) {
+  .product__title {
+    font-size: 1.5rem;
+    line-height: 1.3333333333;
+  }
 }
 .product__text {
   font-weight: normal;
@@ -773,17 +810,36 @@ body {
   color: #878787;
   margin-bottom: 1.8125rem;
 }
+@media (max-width: 767.98px) {
+  .product__btn {
+    display: none;
+  }
+}
+.product .product__btn--mobile {
+  display: none;
+}
+@media (max-width: 767.98px) {
+  .product .product__btn--mobile {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.875rem;
+  }
+}
 .product__video {
-  width: 45.25rem;
-  height: 27.75rem;
-  padding: 0 45.25rem 0 0;
+  width: 100%;
+  padding: 0px 0 33% 0;
   position: relative;
+}
+@media (max-width: 767.98px) {
+  .product__video {
+    padding: 0px 0 56% 0;
+  }
 }
 .product__video iframe {
   position: absolute;
   width: 100%;
   height: 100%;
-  top: -0.4375rem;
+  top: 0;
   left: 0;
   object-fit: cover;
 }
