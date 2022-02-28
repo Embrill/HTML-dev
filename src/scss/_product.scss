@@ -10,15 +10,26 @@
 }
 .product {
 	display: flex;
-	justify-content: space-between;
+	gap: 125px;
 
+	@media (max-width: $containerWidth) {
+		gap: 10px;
+	}
+	@media (max-width: $mobile) {
+		flex-direction: column;
+	}
 	// .product__content
 	&__content {
-		padding-top: rem(94);
+		padding-top: 5.7rem;
+		padding-right: rem(15);
 		width: 100%;
 		max-width: rem(455);
 
 		margin-left: rem(22);
+
+		@media (max-width: $mobile) {
+			margin-left: rem(0);
+		}
 	}
 	// .product__title
 	&__title {
@@ -28,6 +39,11 @@
 		color: $violet;
 
 		margin-bottom: rem(7);
+
+		@media (max-width: $mobile) {
+			font-size: rem(24);
+			line-height: math.div(32, 24);
+		}
 	}
 	// .product__text
 	&__text {
@@ -41,19 +57,34 @@
 	}
 	// .product__btn
 	&__btn {
+		@media (max-width: $mobile) {
+			display: none;
+		}
+	}
+	//product__btn--mobile
+	.product__btn--mobile {
+		display: none;
+		@media (max-width: $mobile) {
+			display: flex;
+			justify-content: center;
+			margin-top: rem(30);
+		}
 	}
 	// .product__video
 	&__video {
-		width: rem(724);
-		height: rem(444);
-		padding: 0 rem(724) 0 0;
+		width: 100%;
+		padding: 0px 0 33% 0;
 		position: relative;
+
+		@media (max-width: $mobile) {
+			padding: 0px 0 56% 0;
+		}
 	}
 	&__video iframe {
 		position: absolute;
 		width: 100%;
 		height: 100%;
-		top: rem(-7);
+		top: 0;
 		left: 0;
 		object-fit: cover;
 	}

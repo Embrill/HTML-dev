@@ -33,7 +33,7 @@
 		}
 		@media (max-width: $mobileSmall) {
 			gap: rem(100);
-			margin-top: rem(200);
+			margin-top: rem(150);
 		}
 	}
 
@@ -113,6 +113,9 @@
 
 	margin-bottom: rem(50);
 
+	@media (max-width: $mobileSmall) {
+		bottom: rem(60);
+	}
 	/* transition: background-color 0.2s linear;
 	&:hover {
 		background-color: $orangeHover;

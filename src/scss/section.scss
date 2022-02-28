@@ -30,6 +30,15 @@
 
 .section--product {
 	padding: rem(114) 0 rem(97) 0;
+
+	@media (max-width: $pc) {
+	}
+	@media (max-width: $mobile) {
+		padding-top: rem(40);
+	}
+	@media (max-width: $mobileSmall) {
+		padding-top: rem(00);
+	}
 }
 
 .section--contact {
