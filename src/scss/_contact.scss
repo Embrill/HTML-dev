@@ -13,6 +13,10 @@
 
 	display: flex;
 	flex-direction: column;
+
+	@media (max-width: $mobile) {
+		min-height: auto;
+	}
 }
 .contact {
 	display: flex;
@@ -21,6 +25,18 @@
 	padding-left: 62px;
 	padding-right: 30px;
 	margin-top: 126px;
+
+	@media (max-width: $pc) {
+		margin: 126px auto;
+		flex-direction: column;
+		justify-content: center;
+		max-width: 740px;
+		width: 100%;
+	}
+	@media (max-width: $mobile) {
+		padding: 0;
+		margin: rem(90) 0;
+	}
 	// .contact__title
 	&__title {
 		font-weight: bold;
@@ -29,6 +45,24 @@
 
 		display: inline-block;
 		max-width: 361px;
+
+		@media (max-width: $pc) {
+			margin-bottom: rem(50);
+			max-width: none;
+			font-size: rem(50);
+			line-height: math.div(40, 50);
+			br {
+				display: none;
+			}
+		}
+		@media (max-width: $mobile) {
+			font-size: rem(40);
+			line-height: math.div(40, 40);
+		}
+		@media (max-width: $mobileSmall) {
+			font-size: rem(34);
+			line-height: math.div(40, 34);
+		}
 	}
 	// .contact__form
 	&__form {
@@ -42,18 +76,31 @@
 		letter-spacing: -0.02666rem;
 
 		margin-bottom: 37px;
+
+		@media (max-width: $mobile) {
+			font-size: rem(20);
+			line-height: math.div(24, 20);
+		}
 	}
 }
 .form-name {
 	display: flex;
 	column-gap: rem(20);
 	margin-bottom: 33px;
+
+	@media (max-width: $mobileSmall) {
+		flex-direction: column;
+		margin-bottom: rem(0);
+	}
 	// .form-name__item
 	&__item {
 		display: flex;
 		flex-direction: column;
 		width: 310px;
-
+		@media (max-width: $mobileSmall) {
+			width: auto;
+			margin-bottom: rem(10);
+		}
 		input {
 			height: rem(40);
 			border-radius: 8px;
@@ -78,6 +125,14 @@
 }
 .form-email {
 	margin-bottom: 30px;
+
+	@media (max-width: $pc) {
+		display: flex;
+	}
+	@media (max-width: $mobileSmall) {
+		margin-bottom: rem(10);
+	}
+
 	// .form-email__item
 	&__item {
 		display: flex;

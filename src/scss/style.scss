@@ -82,6 +82,11 @@ body {
 	&:hover {
 		background-color: $orangeHover;
 	}
+
+	@media (max-width: $mobileSmall) {
+		margin: 0 auto;
+		display: block;
+	}
 }
 
 /* Отдельные блоки */

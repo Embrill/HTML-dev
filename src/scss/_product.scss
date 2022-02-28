@@ -29,6 +29,7 @@
 
 		@media (max-width: $mobile) {
 			margin-left: rem(0);
+			padding-top: 2.7rem;
 		}
 	}
 	// .product__title
@@ -40,6 +41,10 @@
 
 		margin-bottom: rem(7);
 
+		@media (max-width: $pc) {
+			font-size: rem(30);
+			line-height: math.div(32, 30);
+		}
 		@media (max-width: $mobile) {
 			font-size: rem(24);
 			line-height: math.div(32, 24);

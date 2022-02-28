@@ -233,6 +233,12 @@ body {
 .btn-contact:hover {
   background-color: #c76d00;
 }
+@media (max-width: 479.98px) {
+  .btn-contact {
+    margin: 0 auto;
+    display: block;
+  }
+}
 
 /* Отдельные блоки */
 .header {
@@ -358,6 +364,7 @@ body {
 @media (max-width: 767.98px) {
   .section--product {
     padding-top: 2.5rem;
+    padding-bottom: 3.75rem;
   }
 }
 @media (max-width: 479.98px) {
@@ -787,6 +794,7 @@ body {
 @media (max-width: 767.98px) {
   .product__content {
     margin-left: 0rem;
+    padding-top: 2.7rem;
   }
 }
 .product__title {
@@ -795,6 +803,12 @@ body {
   line-height: 3.4375rem;
   color: #7050e5;
   margin-bottom: 0.4375rem;
+}
+@media (max-width: 1182px) {
+  .product__title {
+    font-size: 1.875rem;
+    line-height: 1.0666666667;
+  }
 }
 @media (max-width: 767.98px) {
   .product__title {
@@ -853,6 +867,11 @@ body {
   display: flex;
   flex-direction: column;
 }
+@media (max-width: 767.98px) {
+  .container--contact {
+    min-height: auto;
+  }
+}
 
 .contact {
   display: flex;
@@ -861,6 +880,21 @@ body {
   padding-right: 30px;
   margin-top: 126px;
 }
+@media (max-width: 1182px) {
+  .contact {
+    margin: 126px auto;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 740px;
+    width: 100%;
+  }
+}
+@media (max-width: 767.98px) {
+  .contact {
+    padding: 0;
+    margin: 5.625rem 0;
+  }
+}
 .contact__title {
   font-weight: bold;
   font-size: 3.4375rem;
@@ -868,11 +902,40 @@ body {
   display: inline-block;
   max-width: 361px;
 }
+@media (max-width: 1182px) {
+  .contact__title {
+    margin-bottom: 3.125rem;
+    max-width: none;
+    font-size: 3.125rem;
+    line-height: 0.8;
+  }
+  .contact__title br {
+    display: none;
+  }
+}
+@media (max-width: 767.98px) {
+  .contact__title {
+    font-size: 2.5rem;
+    line-height: 1;
+  }
+}
+@media (max-width: 479.98px) {
+  .contact__title {
+    font-size: 2.125rem;
+    line-height: 1.1764705882;
+  }
+}
 .form__title {
   font-weight: bold;
   font-size: 28px;
   letter-spacing: -0.02666rem;
   margin-bottom: 37px;
+}
+@media (max-width: 767.98px) {
+  .form__title {
+    font-size: 1.25rem;
+    line-height: 1.2;
+  }
 }
 
 .form-name {
@@ -880,10 +943,22 @@ body {
   column-gap: 1.25rem;
   margin-bottom: 33px;
 }
+@media (max-width: 479.98px) {
+  .form-name {
+    flex-direction: column;
+    margin-bottom: 0rem;
+  }
+}
 .form-name__item {
   display: flex;
   flex-direction: column;
   width: 310px;
+}
+@media (max-width: 479.98px) {
+  .form-name__item {
+    width: auto;
+    margin-bottom: 0.625rem;
+  }
 }
 .form-name__item input {
   height: 2.5rem;
@@ -904,6 +979,16 @@ body {
 
 .form-email {
   margin-bottom: 30px;
+}
+@media (max-width: 1182px) {
+  .form-email {
+    display: flex;
+  }
+}
+@media (max-width: 479.98px) {
+  .form-email {
+    margin-bottom: 0.625rem;
+  }
 }
 .form-email__item {
   display: flex;
