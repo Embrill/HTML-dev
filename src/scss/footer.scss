@@ -6,9 +6,17 @@
 	// .footer__inner
 	&__inner {
 		display: flex;
+
+		@media (max-width: $mobile) {
+			flex-direction: column;
+			align-items: center;
+		}
 	}
 	// .footer__twitter
 	&__twitter {
+		@media (max-width: $mobile) {
+			margin-bottom: rem(60);
+		}
 	}
 	// .footer__nav
 	&__nav {
@@ -19,6 +27,15 @@
 		bottom: 13%;
 		right: 9.5%;
 		z-index: 10;
+
+		@media (max-width: $mobile) {
+			position: static;
+			display: block;
+			margin: 0 auto;
+			margin-top: rem(50);
+			width: 88px;
+			height: auto;
+		}
 	}
 	.footer__bottom {
 		background-color: $footerBottom;
@@ -40,11 +57,18 @@
 			color: $orange;
 			padding: 0 4px;
 		}
+
+		@media (max-width: $mobile) {
+			font-size: rem(8);
+			padding: rem(37) 0;
+		}
 	}
 }
 .container {
 }
 .twitter {
+	display: flex;
+	flex-direction: column;
 	max-width: rem(300);
 	width: 100%;
 	// .twitter__top
@@ -136,7 +160,21 @@
 
 	margin-left: rem(120);
 	display: flex;
+	flex-wrap: wrap;
 	column-gap: rem(132);
+
+	@media (max-width: $pc) {
+		margin-left: rem(50);
+		column-gap: rem(70);
+		row-gap: rem(30);
+	}
+	@media (max-width: $mobile) {
+		justify-content: center;
+	}
+	@media (max-width: $mobileSmall) {
+		justify-content: space-between;
+		width: auto;
+	}
 }
 
 .nav-footer {
