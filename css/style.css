@@ -1,7 +1,6 @@
 @charset "UTF-8";
 /* Переменные / Всегда должны идти первыми */
 /* mixins */
-/* Шрифты */
 @import url(https://fonts.googleapis.com/css?family=Raleway:500,600,800);
 @font-face {
   font-family: icons;
@@ -31,7 +30,7 @@
   font-weight: 600;
   font-style: normal;
 }
-/* Иконочный шрифт */
+/* Шрифты */
 [class*=_icon-]:before {
   font-family: "icons";
   font-style: normal;
@@ -55,19 +54,23 @@
   content: "\e901";
 }
 
-._icon-play:before {
+._icon-marker-with-bg:before {
   content: "\e902";
 }
 
-._icon-twitter:before {
+._icon-play:before {
   content: "\e903";
 }
 
-._icon-twitterbig:before {
+._icon-twitter:before {
   content: "\e904";
 }
 
-/* Обнуляющий стиль */
+._icon-twitterbig:before {
+  content: "\e905";
+}
+
+/* Иконочный шрифт */
 * {
   padding: 0;
   margin: 0;
@@ -157,6 +160,7 @@ h6 {
   font-weight: inherit;
 }
 
+/* Обнуляющий стиль */
 /* Оболочка */
 .wrapper {
   min-height: 100%;
@@ -251,7 +255,7 @@ body {
 }
 @media (max-width: 767.98px) {
   .header {
-    padding-top: 0;
+    padding: 10px 0;
   }
 }
 .header__inner {
@@ -261,13 +265,94 @@ body {
 }
 .header__logo img {
   width: 78px;
-  height: 100px;
+  height: auto;
 }
 @media (max-width: 767.98px) {
   .header__logo img {
     max-width: 39px;
     width: 100%;
   }
+}
+
+.header.fixed {
+  background-color: #7050e5;
+  padding: 10px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  transform: translate3d(0, 0, 0);
+  /* чтобы не дерглась при скролле */
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+@media (max-width: 767.98px) {
+  .header.fixed {
+    /* width: 101%; */
+  }
+}
+.header.fixed img {
+  width: 40px;
+}
+
+.header.active {
+  background-color: #7050e5;
+}
+.header.active .container .header__inner .nav .nav__list {
+  position: static;
+}
+
+.header-burger {
+  display: none;
+  position: relative;
+  width: 1.875rem;
+  height: 1.25rem;
+  font-size: 0;
+  color: transparent;
+  background: none;
+}
+.header-burger:before, .header-burger:after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: #fff;
+  position: absolute;
+  right: 0;
+  transition: all 0.3s linear;
+}
+.header-burger:before {
+  top: 0;
+}
+.header-burger:after {
+  bottom: 0;
+}
+.header-burger span {
+  position: absolute;
+  top: 8.5px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #fff;
+  transition: all 0.3s linear;
+}
+@media (max-width: 767.98px) {
+  .header-burger {
+    display: block;
+  }
+}
+
+.header-burger.active .header-burger__item {
+  background: none;
+}
+
+.header-burger.active::before {
+  transform: rotate(45deg);
+  top: 8.5px;
+}
+.header-burger.active::after {
+  transform: rotate(-45deg);
+  bottom: 8.5px;
 }
 
 .nav {
@@ -280,6 +365,14 @@ body {
 @media (max-width: 767.98px) {
   .nav {
     display: none;
+    position: absolute;
+    top: 99%;
+    /* чтобы не было щели */
+    left: 0;
+    max-width: none;
+    max-height: 278px;
+    height: auto;
+    background-color: #7050e5;
   }
 }
 .nav__list {
@@ -290,14 +383,39 @@ body {
   display: flex;
   flex-wrap: wrap;
 }
+@media (max-width: 767.98px) {
+  .nav__list {
+    margin-top: 1.25rem;
+  }
+}
+@media (max-width: 767.98px) {
+  .nav__links {
+    width: 100%;
+    background-color: #7050e5;
+    padding-left: 1.25rem;
+  }
+}
 .nav__links:not(:last-child) {
   margin-right: 29px;
+}
+@media (max-width: 767.98px) {
+  .nav__links:not(:last-child) {
+    margin-right: 0;
+  }
 }
 .nav__link {
   color: white;
   font-size: 0.9375rem;
-  line-height: 1.2;
   position: relative;
+}
+@media (max-width: 767.98px) {
+  .nav__link {
+    /* line-height: 3.2; */
+    margin-bottom: 1.875rem;
+    width: 100%;
+    /* чтобы полоска была на всю ширину */
+    display: block;
+  }
 }
 .nav__link::after {
   content: "";
@@ -311,6 +429,12 @@ body {
   left: -5%;
   z-index: 1;
   transition: opacity 0.1s linear;
+}
+@media (max-width: 767.98px) {
+  .nav__link::after {
+    width: 140%;
+    left: -15%;
+  }
 }
 .nav__link:hover:after {
   /* Появление полоски снизу под текстом в шапке */
