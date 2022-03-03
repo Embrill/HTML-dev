@@ -21,12 +21,15 @@
 ._icon-marker:before {
 	content: "\e901";
 }
-._icon-play:before {
+._icon-marker-with-bg:before {
 	content: "\e902";
 }
-._icon-twitter:before {
+._icon-play:before {
 	content: "\e903";
 }
-._icon-twitterbig:before {
+._icon-twitter:before {
 	content: "\e904";
+}
+._icon-twitterbig:before {
+	content: "\e905";
 }

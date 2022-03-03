@@ -4,11 +4,10 @@
 	left: 0;
 	right: 0;
 	z-index: 1000;
-
 	padding-top: rem(32);
 
 	@media (max-width: $mobile) {
-		padding-top: 0;
+		padding: 10px 0;
 	}
 	&__inner {
 		display: flex;
@@ -20,13 +19,106 @@
 	&__logo {
 		& img {
 			width: 78px;
-			height: 100px;
+			height: auto;
 
 			@media (max-width: $mobile) {
 				max-width: 39px;
 				width: 100%;
 			}
 		}
+	}
+}
+.header.fixed {
+	background-color: $violet;
+
+	padding: 10px 0;
+
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 1000;
+
+	transform: translate3d(0, 0, 0); /* чтобы не дерглась при скролле */
+	box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+	@media (max-width: $mobile) {
+		/* width: 101%; */
+	}
+	img {
+		width: 40px;
+	}
+}
+.header.active {
+	background-color: $violet;
+
+	.container {
+		.header__inner {
+			.nav {
+				.nav__list {
+					position: static;
+				}
+			}
+		}
+	}
+}
+//nav-toggle
+.header-burger {
+	display: none;
+	position: relative;
+	width: rem(30);
+	height: rem(20);
+
+	font-size: 0;
+	color: transparent;
+	background: none;
+
+	&:before,
+	&:after {
+		content: "";
+		display: block;
+		width: 100%;
+		height: 3px;
+		background-color: #fff;
+		position: absolute;
+		right: 0;
+
+		transition: all 0.3s linear;
+	}
+
+	&:before {
+		top: 0;
+	}
+	&:after {
+		bottom: 0;
+	}
+	span {
+		position: absolute;
+		top: 8.5px;
+		left: 0;
+		width: 100%;
+		height: 3px;
+
+		background-color: #fff;
+
+		transition: all 0.3s linear;
+	}
+
+	@media (max-width: $mobile) {
+		display: block;
+	}
+}
+//крестик при нажатии на бургер
+.header-burger.active .header-burger__item {
+	background: none;
+}
+.header-burger.active {
+	&::before {
+		transform: rotate(45deg);
+		top: 8.5px;
+	}
+	&::after {
+		transform: rotate(-45deg);
+		bottom: 8.5px;
 	}
 }
 .container {
@@ -41,6 +133,14 @@
 
 	@media (max-width: $mobile) {
 		display: none;
+		position: absolute;
+		top: 99%; /* чтобы не было щели */
+		left: 0;
+		max-width: none;
+		max-height: 278px;
+		height: auto;
+
+		background-color: $violet;
 	}
 
 	&__list {
@@ -51,17 +151,39 @@
 
 		display: flex;
 		flex-wrap: wrap;
+		@media (max-width: $mobile) {
+			margin-top: rem(20);
+		}
+	}
+
+	&__links {
+		@media (max-width: $mobile) {
+			width: 100%;
+			background-color: $violet;
+
+			padding-left: rem(20);
+		}
 	}
 
 	&__links:not(:last-child) {
 		margin-right: 29px;
+		@media (max-width: $mobile) {
+			margin-right: 0;
+		}
 	}
 
 	&__link {
 		color: rgb(255, 255, 255);
 		font-size: rem(15);
-		line-height: math.div(18, 15);
+
 		position: relative;
+
+		@media (max-width: $mobile) {
+			/* line-height: 3.2; */
+			margin-bottom: rem(30);
+			width: 100%; /* чтобы полоска была на всю ширину */
+			display: block;
+		}
 	}
 
 	&__link::after {
@@ -76,6 +198,11 @@
 		left: -5%;
 		z-index: 1;
 		transition: opacity 0.1s linear;
+
+		@media (max-width: $mobile) {
+			width: 140%;
+			left: -15%;
+		}
 	}
 	&__link:hover:after {
 		/* Появление полоски снизу под текстом в шапке */

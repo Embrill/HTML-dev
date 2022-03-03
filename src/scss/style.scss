@@ -1,9 +1,9 @@
-@use "sass:math"; /* Переменные / Всегда должны идти первыми */
-@import "vars"; /* mixins */
-@import "base/mixins"; /* Шрифты */
-@import "fonts"; /* Иконочный шрифт */
-@import "fonts/icons"; /* Обнуляющий стиль */
-@import "nullstyle";
+@use "sass:math";
+@import "vars"; /* Переменные / Всегда должны идти первыми */
+@import "base/mixins"; /* mixins */
+@import "fonts"; /* Шрифты */
+@import "fonts/icons"; /* Иконочный шрифт */
+@import "nullstyle"; /* Обнуляющий стиль */
 
 /* Оболочка */
 .wrapper {
