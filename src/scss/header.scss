@@ -1,3 +1,4 @@
+// К хедеру добавляется active и fixed
 .header {
 	position: absolute;
 	top: 0;
@@ -123,6 +124,7 @@
 }
 .container {
 }
+
 .nav {
 	max-width: 573px;
 	max-height: 78px;
@@ -209,4 +211,10 @@
 		/* display: block; */
 		opacity: 1; /* Прозрачность на 100% */
 	}
+}
+
+// Выпадающий список меню из бургера
+.nav.active {
+	display: block;
+	overflow: hidden;
 }
