@@ -443,6 +443,11 @@ body {
   /* Прозрачность на 100% */
 }
 
+.nav.active {
+  display: block;
+  overflow: hidden;
+}
+
 .section--stat {
   padding: 8.3125rem 0;
 }
