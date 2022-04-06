@@ -6,7 +6,7 @@ import Swiper, { Navigation, Pagination } from 'swiper';
 
 const swiper = new Swiper();
 
-// =====
+// =========================================
 // БУРГЕР
 // Достаем кнопку-бургер
 let headerBurger = document.querySelector('.header-burger');
@@ -23,12 +23,16 @@ headerBurger.addEventListener('click', function () { // На headerBurger веш
 })
 
 // FIXED HEADER
+const mainElement = document.documentElement; // Достаем целый элемент
+const mainElementHeight = mainElement.clientHeight; // Достаем высоту окна
+const windowScrollTop = window.pageYOffset; // Присваивание прокрученных пикселей
 
+// window.onscroll - событие прокручивания страницы
 window.onscroll = function fixedHeader() {
-    if (window.pageYOffset > 800) {
-        header.classList.add('fixed');
+    if (window.pageYOffset >= (mainElementHeight - 100)) {
+        header.classList.add('fixed'); // Добавление класса fixed
     } else {
-        header.classList.remove('fixed');
+        header.classList.remove('fixed'); // Удаление класса fixed
     }
 }
 
