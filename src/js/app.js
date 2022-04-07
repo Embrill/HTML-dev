@@ -36,6 +36,57 @@ window.onscroll = function fixedHeader() {
     }
 }
 
+// SMOOTH SCROLL
+/* 
+function scrollTo(element) {
+    window.scroll({
+        left: 0,
+        top: element.offsetTop, // Узнаем сколько px у элемента от верха
+        behavior: 'smooth',
+    })
+}
+
+let buttonNavLink = document.querySelector('.nav__link');
 
 
+buttonNavLink.addEventListener('click', () => {
+    console.log('Клик произошел');
+}) */
+/* 
+let dataScroll = nav.querySelectorAll("[data-scroll]");
+
+dataScroll.addEventListener('click', function (event) {
+    event.preventDefault();
+
+    var blockId = this.data('scroll'),
+        blockOffset = blockId.offset().top,
+
+
+
+});
+
+console.log(dataScroll); */
+
+const menuLinks = document.querySelectorAll('.nav__link[data-scroll]'); // Ищем все .nav__link с атрибутом data-scroll
+if (menuLinks.length > 0) { // menuLinks.length > 0 просто проверяет наличие данного класса с атрибутом
+    menuLinks.forEach(menuLink => {
+        menuLink.addEventListener("click", onMenuLinkClick);
+    });
+
+    function onMenuLinkClick(e) {
+        const menuLink = e.target;
+        if (menuLink.dataset.scroll && document.querySelector(menuLink.dataset.scroll)) {
+            const gotoBlock = document.querySelector(menuLink.dataset.scroll);
+            const gotoBlockValue = gotoBlock.getBoundingClientRect().top + pageYOffset - document.querySelector('header').offsetHeight;
+
+            console.log('ЭТА ЕБАНИНА РАБОТАЕТ');
+
+            window.scrollTo({
+                top: gotoBlockValue,
+                behavior: "smooth"
+            });
+            e.preventDefault();
+        }
+    }
+}
 
