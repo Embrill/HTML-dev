@@ -24,9 +24,9 @@ headerBurger.addEventListener('click', function () { // На headerBurger веш
 
 // FIXED HEADER
 const mainElement = document.documentElement; // Достаем целый элемент
-const mainElementHeight = mainElement.clientHeight; // Достаем высоту окна
+/* Не работает */ const mainElementHeight = mainElement.clientHeight; // Достаем высоту окна
 const introHeight = document.querySelector('.intro').offsetHeight; // 
-const windowScrollTop = window.pageYOffset; // Присваивание прокрученных пикселей
+/* Не работает */ const windowScrollTop = window.pageYOffset; // Присваивание прокрученных пикселей
 
 // window.onscroll - событие прокручивания страницы
 window.onscroll = function fixedHeader() {
@@ -41,7 +41,7 @@ window.onscroll = function fixedHeader() {
 
 const menuLinks = document.querySelectorAll('.nav__link[data-scroll]'); // Ищем все .nav__link с атрибутом data-scroll
 if (menuLinks.length > 0) { // menuLinks.length > 0 просто проверяет наличие данного класса с атрибутом
-    menuLinks.forEach(menuLink => { // forEach - перебор массива со значениями (item – очередной элемент массива, i – его номер, arr – массив, который перебирается)
+    menuLinks.forEach(menuLink => { // forEach - для каждой ссылки выполняется ф-я menuLink, которая вешает событие click с фун-ей onMenuLinkClick  
         menuLink.addEventListener("click", onMenuLinkClick); // Добавление прослушки
     });
 
@@ -60,4 +60,26 @@ if (menuLinks.length > 0) { // menuLinks.length > 0 просто проверя�
         }
     }
 }
+
+// SMOOTH SCROLL btnDown
+const btnDown = document.querySelector('.btn__down'); // ищу кнопку
+const aboutBlock = document.querySelector('#about'); // ищу блок, к которому идет навигация
+
+// Создание ф-и прокрутки
+function btnDownScroll(e) {
+    window.scrollTo({
+        left: 0,
+        top: e.offsetTop,
+        behavior: "smooth"
+    });
+    e.preventDefault();
+}
+
+//  Добавление события на кнопку, которая включает ф-ю btnDownScroll,
+// которая прокручивает страницу до нужного места
+btnDown.addEventListener("click", function () {
+    btnDownScroll(aboutBlock);
+})
+
+
 
