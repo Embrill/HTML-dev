@@ -33,6 +33,11 @@ body {
 	color: #fff;
 }
 
+// Лок body, когда открывается попап
+body.lock {
+	overflow: hidden;
+}
+
 /* Кнопка */
 .btn {
 	display: inline-block;

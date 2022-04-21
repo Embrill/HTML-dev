@@ -36,9 +36,8 @@
 					</div>
 					<div class="intro__down">
 						<div class="intro__find">FIND OUT MORE</div>
-						<a href="#" class="btn__down _icon-downbtn">
-
-						</a>
+						<a href="##" class="btn__down _icon-downbtn"></a>
+						<!-- ## - якорь, который не приводит к скроллу начала страницы -->
 					</div>
 
 				</div>
@@ -242,16 +241,28 @@
 							</div>
 						</div>
 
-						<div class="product__video video">
-							<iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player"
-								frameborder="0"
-								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-								allowfullscreen></iframe>
-						</div>
+						<a href="#popup" class="product__video video popup-link">
+							<img class="product__img" src="@img/product/product-video.png" alt="">
+						</a>
 						<div class="product__btn product__btn--mobile">
 							<a class="btn-small" href="#">more info</a>
 						</div>
 					</div>
+
+					<!-- TEST POPUP -->
+					<div id="popup" class="popup">
+						<div class="popup__body">
+							<div class="popup__content">
+								<!-- Можно указать ссылку на фиксированный хедер во избежании прокрутки скролла к началу страницы -->
+								<a href="#" class="popup__close close-popup">X</a>
+								<iframe class="popup__video" src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+									title="YouTube video player" frameborder="0"
+									allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+									allowfullscreen></iframe>
+							</div>
+						</div>
+					</div>
+
 
 				</div>
 			</section><!-- ./product -->

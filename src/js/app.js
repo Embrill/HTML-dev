@@ -82,4 +82,125 @@ btnDown.addEventListener("click", function () {
 })
 
 
+// pop-up VIDEO
+const popupLinks = document.querySelectorAll('.popup-link'); // Открытие попапа при клике на ссылки с классом popup-link
+const body = document.querySelector('body'); // Чтобы заблокировать скролл body 
+const lockPadding = document.querySelectorAll('.lock-padding'); // ...
 
+let unlock = true; // тоже число, что указано в transition в css
+
+const timeout = 300;
+
+// Проверка на существование ссылок на странице
+if (popupLinks.length > 0) {
+    // Цикл пробегания по ссылкам
+    for (let index = 0; index < popupLinks.length; index++) {
+        // получение каждой ссылки в отдельную константу со своим index
+        const popupLink = popupLinks[index];
+        // Вешание события при клике на полученную ссылку
+        popupLink.addEventListener("click", function (e) {
+            // Получение чистого имени popupName путем замены '#' на '' пустой символ
+            const popupName = popupLink.getAttribute('href').replace('#', '');
+            // Получение чистого имени popup из ID / curent - текущий 
+            const curentPopup = document.getElementById(popupName);
+            // ф-я открытия popup
+            popupOpen(curentPopup);
+            // Запрет перезагрузки страницы (ссылки)
+            e.preventDefault();
+        });
+    }
+}
+
+// Закрытие попапа по добавлению класса close-popup
+const popupCloseIcon = document.querySelectorAll('.close-popup');
+// Проверка на наличие класса
+if (popupCloseIcon.length > 0) {
+    for (let index = 0; index < popupCloseIcon.length; index++) {
+        const element = popupCloseIcon[index];
+        element.addEventListener('click', function (e) {
+            // При клике идет поиск ближайшего родителя с классом popup
+            popupClose(element.closest('.popup'));
+            e.preventDefault();
+        });
+    }
+}
+
+// Открытие попапа
+function popupOpen(curentPopup) {
+    // Проверка наличия чистого имени попапа name && true
+    if (curentPopup && unlock) {
+        // Получение открытого попапа с классом .open
+        const popupActive = document.querySelector('.popup.open');
+        // Проверка наличия открытого попапа
+        if (popupActive) {
+            popupClose(popupActive, false);
+        } else {
+            bodyLock();
+        }
+        // Непосредственное добавление класса open для открытия
+        curentPopup.classList.add('open');
+        // Закрытия попапа при нажатии вне контента
+        curentPopup.addEventListener('click', function (e) {
+            if (!e.target.closest('.popup__content')) {
+                popupClose(e.target.closest('.popup'));
+            }
+        });
+    }
+}
+
+// Close popup
+function popupClose(popupActive, doUnlock = true) {
+    if (unlock) {
+        popupActive.classList.remove('open');
+        if (doUnlock) {
+            bodyUnlock();
+        }
+    }
+}
+
+// Фикса бага скролла при открытии попапа
+function bodyLock() {
+    // Высчитывание скроллбара
+    const lockPaddingValue = window.innerWidth - document.querySelector('.wrapper').offsetWidth + 'px';
+
+    if (lockPadding.lenght > 0) {
+        for (let index = 0; index < lockPadding.length; index++) {
+            const el = lockPadding[index];
+            el.style.paddingRight = lockPaddingValue;
+        }
+    }
+    body.style.paddingRight = lockPaddingValue;
+    body.classList.add('lock');
+
+    unlock = false;
+    setTimeout(function () {
+        unlock = true;
+    }, timeout);
+}
+
+// Unblocking scroll
+function bodyUnlock() {
+    setTimeout(function () {
+        if (lockPadding.lenght > 0) {
+            for (let index = 0; index < lockPadding.lenght; index++) {
+                const el = lockPadding[index];
+                el.style.paddingRight = '0px';
+            }
+        }
+        body.style.paddingRight = '0px';
+        body.classList.remove('lock');
+    }, timeout);
+
+    unlock = false;
+    setTimeout(function () {
+        unlock = true;
+    }, timeout);
+}
+
+// Close popup if Esc click
+document.addEventListener('keydown', function (e) {
+    if (e.code === 'Escape') {
+        const popupActive = document.querySelector('.popup.open');
+        popupClose(popupActive);
+    }
+});
