@@ -85,7 +85,7 @@ btnDown.addEventListener("click", function () {
 // pop-up VIDEO
 const popupLinks = document.querySelectorAll('.popup-link'); // Открытие попапа при клике на ссылки с классом popup-link
 const body = document.querySelector('body'); // Чтобы заблокировать скролл body 
-const lockPadding = document.querySelectorAll('.lock-padding'); // ...
+const lockPadding = document.querySelectorAll(".lock-padding"); // 
 
 let unlock = true; // тоже число, что указано в transition в css
 
@@ -163,12 +163,13 @@ function bodyLock() {
     // Высчитывание скроллбара
     const lockPaddingValue = window.innerWidth - document.querySelector('.wrapper').offsetWidth + 'px';
 
-    if (lockPadding.lenght > 0) {
-        for (let index = 0; index < lockPadding.length; index++) {
-            const el = lockPadding[index];
-            el.style.paddingRight = lockPaddingValue;
-        }
+
+    for (let index = 0; index < lockPadding.length; index++) {
+        const el = lockPadding[index];
+        el.style.paddingRight = lockPaddingValue;
+        console.log('Лок паддинг ПЛЮС');
     }
+
     body.style.paddingRight = lockPaddingValue;
     body.classList.add('lock');
 
@@ -181,12 +182,13 @@ function bodyLock() {
 // Unblocking scroll
 function bodyUnlock() {
     setTimeout(function () {
-        if (lockPadding.lenght > 0) {
-            for (let index = 0; index < lockPadding.lenght; index++) {
-                const el = lockPadding[index];
-                el.style.paddingRight = '0px';
-            }
+
+        for (let index = 0; index < lockPadding.length; index++) {
+            const el = lockPadding[index];
+            el.style.paddingRight = '0px';
+            console.log('Лок паддинг МИНУС');
         }
+
         body.style.paddingRight = '0px';
         body.classList.remove('lock');
     }, timeout);
