@@ -6,7 +6,7 @@ import Swiper, { Navigation, Pagination } from 'swiper';
 
 const swiper = new Swiper();
 
-// =========================================
+// ==============================================
 // БУРГЕР
 // Достаем кнопку-бургер
 let headerBurger = document.querySelector('.header-burger');
@@ -22,6 +22,7 @@ headerBurger.addEventListener('click', function () { // На headerBurger веш
     nav.classList.toggle('active');
 })
 
+// ===============================================
 // FIXED HEADER
 const mainElement = document.documentElement; // Достаем целый элемент
 /* Не работает */ const mainElementHeight = mainElement.clientHeight; // Достаем высоту окна
@@ -37,6 +38,7 @@ window.onscroll = function fixedHeader() {
     }
 }
 
+// ===============================================
 // SMOOTH SCROLL
 
 const menuLinks = document.querySelectorAll('.nav__link[data-scroll]'); // Ищем все .nav__link с атрибутом data-scroll
@@ -61,6 +63,7 @@ if (menuLinks.length > 0) { // menuLinks.length > 0 просто проверя�
     }
 }
 
+// ===============================================
 // SMOOTH SCROLL btnDown
 const btnDown = document.querySelector('.btn__down'); // ищу кнопку
 const aboutBlock = document.querySelector('#about'); // ищу блок, к которому идет навигация
@@ -82,6 +85,7 @@ btnDown.addEventListener("click", function () {
 })
 
 
+// ===============================================
 // pop-up VIDEO
 const popupLinks = document.querySelectorAll('.popup-link'); // Открытие попапа при клике на ссылки с классом popup-link
 const body = document.querySelector('body'); // Чтобы заблокировать скролл body 
@@ -206,3 +210,20 @@ document.addEventListener('keydown', function (e) {
         popupClose(popupActive);
     }
 });
+
+
+
+
+// ===============================================
+// SWIPER
+
+new Swiper(".mySwiper", {
+    direction: "vertical",
+    autoHeight: true,
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true
+    },
+
+});
+
