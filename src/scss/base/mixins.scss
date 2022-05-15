@@ -1,5 +1,7 @@
-//REM
+//REM - Высчитывание единиц REM вводя обычные значения в px
 @function rem($px) {
 	$result: math.div($px, 16) + rem;
 	@return $result;
 }
+
+// Adaptiv Value - Автоматический адаптив при задаче двух значений

@@ -2,9 +2,9 @@ import * as flsFunctions from "./modules/functions.js";
 
 flsFunctions.isWebp();
 
-import Swiper, { Navigation, Pagination } from 'swiper';
+/* import Swiper, { Navigation, Pagination } from 'swiper';
 
-const swiper = new Swiper();
+const swiper = new Swiper(); */
 
 // ==============================================
 // БУРГЕР
@@ -217,4 +217,23 @@ document.addEventListener('keydown', function (e) {
 // ===============================================
 // SWIPER
 
+var newSwiper = new Swiper('.swiper', {
 
+    // Navigation arrows
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+
+    pagination: {
+        el: '.swiper-pagination',
+        type: 'bullets',
+        clickable: true,
+    },
+    // Расстояние между слайдами
+    spaceBetween: 50,
+
+    // Бесконечный свайп
+    loop: true,
+
+});

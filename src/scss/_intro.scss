@@ -1,4 +1,5 @@
 .intro {
+	height: 100%;
 	width: 100%;
 	/* height: 100vh; */
 	min-height: 810px;
@@ -11,14 +12,15 @@
 	/* justify-content: center; */
 
 	&__inner {
-		width: 100%;
-		max-width: 970px;
+		/* width: 100%; */
+		/* max-width: 970px; */
 
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
 
 		margin-left: rem(82);
+		/* margin-right: 100px; */
 		gap: rem(220);
 
 		margin-top: rem(261);
@@ -73,21 +75,35 @@
 	}
 
 	&__social {
-		max-width: 200px;
+		/* max-width: 200px;
 		max-height: 200px;
+		position: relative; */
+
+		max-width: 200px;
+		max-height: 124px;
 		position: relative;
+		right: 0px;
+		top: 70px;
+
+		width: 100%;
+
+		@media (max-width: $pc) {
+			right: 60px;
+		}
 
 		@media (max-width: $mobile) {
-			display: flex;
-			justify-content: center;
-			align-items: center;
+			right: 0;
+			top: 0;
 		}
 	}
 	&__social img {
 		position: absolute;
-		top: -56px;
-		right: 47px;
+		top: 0;
+		right: 0;
 		z-index: 10;
+		max-width: 151px;
+		width: 100%;
+		max-height: 124px;
 
 		@media (max-width: $mobile) {
 			position: absolute;
@@ -136,4 +152,8 @@
 	&:hover {
 		color: rgb(221, 221, 221);
 	}
+}
+
+.container--intro {
+	height: 100%;
 }
