@@ -1099,6 +1099,9 @@ body.lock {
     height: 340px;
   }
 }
+.popup__content iframe {
+  border: 0;
+}
 
 .popup__video {
   width: 100%;

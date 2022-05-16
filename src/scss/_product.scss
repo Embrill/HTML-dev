@@ -176,6 +176,10 @@
 		max-width: 560px;
 		height: 340px;
 	}
+
+	& iframe {
+		border: 0;
+	}
 }
 .popup__video {
 	width: 100%;
