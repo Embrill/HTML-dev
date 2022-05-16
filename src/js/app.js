@@ -67,6 +67,7 @@ if (menuLinks.length > 0) { // menuLinks.length > 0 просто проверя�
 // SMOOTH SCROLL btnDown
 const btnDown = document.querySelector('.btn__down'); // ищу кнопку
 const aboutBlock = document.querySelector('#about'); // ищу блок, к которому идет навигация
+const servicesBlock = document.querySelector('#services');
 
 // Создание ф-и прокрутки
 function btnDownScroll(e) {
@@ -81,7 +82,7 @@ function btnDownScroll(e) {
 //  Добавление события на кнопку, которая включает ф-ю btnDownScroll,
 // которая прокручивает страницу до нужного места
 btnDown.addEventListener("click", function () {
-    btnDownScroll(aboutBlock);
+    btnDownScroll(servicesBlock);
 })
 
 
@@ -219,11 +220,6 @@ document.addEventListener('keydown', function (e) {
 
 var newSwiper = new Swiper('.swiper', {
 
-    // Navigation arrows
-    navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-    },
 
     pagination: {
         el: '.swiper-pagination',
@@ -236,4 +232,24 @@ var newSwiper = new Swiper('.swiper', {
     // Бесконечный свайп
     loop: true,
 
+    // Управление клавиатурой 
+    keyboard: {
+        // Включить/выключить
+        enabled: true,
+        // Включить/выключить 
+        // только когда слайдер
+        // в пределах Viewport
+        onlyInViewport: true,
+        // Управление клавишами
+        pageUpDown: true,
+    },
+
+    // Управление мышкой
+    mousewheel: {
+        sensitivity: 1,
+        eventsTarget: ".swiper-slide",
+    },
+
+    // Автовысота
+    autoHeight: true,
 });

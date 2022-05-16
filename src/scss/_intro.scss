@@ -148,9 +148,10 @@
 	font-size: rem(71);
 	color: $orange;
 
-	transition: color 0.2s linear;
+	transition: all 0.2s linear;
 	&:hover {
-		color: rgb(221, 221, 221);
+		color: $btnDownHover;
+		transform: scale(1.05);
 	}
 }
 
