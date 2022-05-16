@@ -188,6 +188,11 @@
 			width: 100%; /* чтобы полоска была на всю ширину */
 			display: block;
 		}
+
+		@media (max-height: $mobileSmallH) {
+			/* line-height: 3.2; */
+			margin-bottom: rem(15);
+		}
 	}
 
 	&__link::after {

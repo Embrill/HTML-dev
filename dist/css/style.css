@@ -427,6 +427,12 @@ body.lock {
     display: block;
   }
 }
+@media (max-height: 320.98px) {
+  .nav__link {
+    /* line-height: 3.2; */
+    margin-bottom: 0.9375rem;
+  }
+}
 .nav__link::after {
   content: "";
   display: block;
