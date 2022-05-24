@@ -52,7 +52,7 @@ if (menuLinks.length > 0) { // menuLinks.length > 0 просто проверя�
         if (menuLink.dataset.scroll && document.querySelector(menuLink.dataset.scroll)) { // dataset.scroll == data-scroll="", т.к. "dataset." == "data-", а ".scroll" == "-scroll" / второй аргумент создан для проверки наличия нужного класса         
             const scrollBlock = document.querySelector(menuLink.dataset.scroll); // выбирает классы с артибутом data-scroll, которые сработали на обработчике
             const scrollBlockValue = scrollBlock.getBoundingClientRect().top + scrollY - 71;/* 71 - высота .header.fixed */ // .getBoundingClientRect() - выдает координаты элемента относительная окна браузера, в данном случае мы использует только парам-р top / offsetHeight - полная высота элемента 
-            console.log('ЭТА ЕБАНИНА РАБОТАЕТ');
+
 
             window.scrollTo({
                 top: scrollBlockValue,
@@ -172,7 +172,7 @@ function bodyLock() {
     for (let index = 0; index < lockPadding.length; index++) {
         const el = lockPadding[index];
         el.style.paddingRight = lockPaddingValue;
-        console.log('Лок паддинг ПЛЮС');
+
     }
 
     body.style.paddingRight = lockPaddingValue;
@@ -191,7 +191,7 @@ function bodyUnlock() {
         for (let index = 0; index < lockPadding.length; index++) {
             const el = lockPadding[index];
             el.style.paddingRight = '0px';
-            console.log('Лок паддинг МИНУС');
+
         }
 
         body.style.paddingRight = '0px';
